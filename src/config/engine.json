@@ -1,0 +1,29 @@
+{
+  "engineName": "national-parks-demo",
+  "endpointBase": "https://130ed5b74b5949a482abc552f515fdfd.ent-search.us-central1.gcp.cloud.es.io",
+  "searchKey": "search-cu83qvk1txaefq3t7q1isfa2",
+  "resultFields": [
+    "visitors",
+    "square_km",
+    "world_heritage_site",
+    "date_established",
+    "description",
+    "location",
+    "acres",
+    "title",
+    "nps_link",
+    "states",
+    "id"
+  ],
+  "sortFields": [
+    "acres",
+    "description"
+  ],
+  "facets": [
+    "acres",
+    "date_established"
+  ],
+  "titleField": "title",
+  "urlField": "date_established",
+  "thumbnailField": "date_established"
+}

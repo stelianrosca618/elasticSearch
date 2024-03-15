@@ -87,10 +87,10 @@ export default function App() {
                     <>
                     
                     <Results
-                      titleField={getConfig().titleField}
-                      urlField={getConfig().urlField}
-                      thumbnailField={getConfig().thumbnailField}
-                      shouldTrackClickThrough={true}
+                      titleField="title"
+                      urlField="nps_link"
+                      thumbnailField="image_url"
+                      shouldTrackClickThrough
                     />
                     </>
                     

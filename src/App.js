@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
-
+import Select from 'react-select'
 import {
   ErrorBoundary,
   Facet,
@@ -35,6 +35,8 @@ import {
   getFacetFields
 } from "./config/config-helper";
 
+import {FilterOptionView} from './FilterOptionView';
+
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
   searchKey,
@@ -53,26 +55,7 @@ const config = {
 };
 console.log(buildSearchOptionsFromConfig(), buildFacetConfigFromConfig(), buildAutocompleteQueryConfig());
 export default function App() {
-  const filterOptionView = ({ className, label, onChange, onRemove, options }) => {
-    console.log('options', options);
-    const setFilterFact = (e) => {
-      console.log(e.target.value); 
-      if(e.target.value != 'Empty'){
-        onChange(parseFloat(e.target.value))
-      }else{
-        onRemove(options[0].value);
-      }
-      
-    }
-    return (
-      <select className="form-control" onChange={(e) => {setFilterFact(e)}}>
-        <option style={{color: "gray"}}>Empty</option>
-        {options.map((opItem, key) => (
-          <option key={key} value={opItem.value} selected={opItem.selected}>{opItem.value}</option>
-        ))}
-      </select>
-    )
-  }
+  
   return (
     <SearchProvider config={config}>
       <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched})}>
@@ -94,7 +77,7 @@ export default function App() {
                       {getFacetFields().map((field, key) => (
                         <div key={key} className="form-group">
                           <label>{field}</label>
-                          <Facet key={field} field={field} label={field} view={filterOptionView}/>
+                          <Facet key={field} field={field} show={100} label={field} view={FilterOptionView}/>
                         </div>
                         
                       ))}

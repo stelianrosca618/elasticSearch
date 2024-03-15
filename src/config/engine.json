@@ -26,7 +26,8 @@
   "facets": [
     "acres",
     "square_km",
-    "visitors"
+    "visitors",
+    "states"
   ],
   "titleField": "title"
 }

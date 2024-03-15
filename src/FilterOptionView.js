@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Select from 'react-select'
 
-export const FilterOptionView = ({ className, label, onChange, onRemove, options }) =>  {
-    console.log('options', options);
+export const FilterOptionView = ({ className, label, onChange, onRemove, options, values }) =>  {
+    console.log('options', options, values);
     const [showOptions, setShowOptions] = useState([]);
     const [selectedVal, setSelectedVal] = useState(null);
     useEffect(()=> {
@@ -37,7 +37,7 @@ export const FilterOptionView = ({ className, label, onChange, onRemove, options
     
     return (
         <>
-            <Select isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
+          <Select isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
         </>
       )
     }

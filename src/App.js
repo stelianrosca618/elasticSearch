@@ -19,7 +19,7 @@ import {
   BooleanFacet,
   SingleSelectFacet,
   SingleLinksFacet,
-  SelectFacet,
+  MultiCheckboxFacet,
   Facets,
   Autocomplete
 } from "@elastic/react-search-ui-views";
@@ -77,7 +77,7 @@ export default function App() {
                       {getFacetFields().map((field, key) => (
                         <div key={key} className="form-group">
                           <label>{field}</label>
-                          <Facet key={field} field={field} show={100} label={field} view={FilterOptionView}/>
+                          <Facet key={field} isFilterable={true} field={field} show={100} label={field} view={FilterOptionView}/>
                         </div>
                         
                       ))}

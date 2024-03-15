@@ -17,13 +17,16 @@
   ],
   "sortFields": [
     "acres",
-    "description"
+    "description",
+    "nps_link",
+    "states",
+    "visitors",
+    "world_heritage_site"
   ],
   "facets": [
     "acres",
-    "date_established"
+    "square_km",
+    "visitors"
   ],
-  "titleField": "title",
-  "urlField": "date_established",
-  "thumbnailField": "date_established"
+  "titleField": "title"
 }

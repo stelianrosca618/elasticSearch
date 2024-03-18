@@ -71,9 +71,9 @@ export default function App() {
                   header={
                     <>
                     <div className="real-sui-layout-header">
-                      <SearchBox autocompleteSuggestions={true} />
+                      <SearchBox className="sui-layout-body__inner" autocompleteSuggestions={true} />
                     </div>
-                    <div className="d-flex justify-content-between align-items-center p-4">
+                    <div className="sui-layout-body__inner d-flex justify-content-between align-items-center p-4">
                       {wasSearched && <PagingInfo view={PageInfoView} />}
                       {wasSearched && <ResultsPerPage label="Items per Page"/>}
                     </div>

@@ -37,7 +37,7 @@ export const FilterOptionView = ({ className, label, onChange, onRemove, options
     
     return (
         <>
-          <Select isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
+          <Select placeholder={label} isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
         </>
       )
     }

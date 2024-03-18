@@ -27,6 +27,22 @@
 .App-link {
   color: #61dafb;
 }
+.sui-layout-header{
+  padding: 0 !important;
+  border-bottom: none !important;
+  background: #fcfcfc !important;
+}
+.sui-layout-sidebar{
+  text-align: start !important;
+}
+.sui-result__details{
+  text-align: start !important;
+}
+.real-sui-layout-header{
+  padding: 32px 24px;
+  border-bottom: 1px solid #eeeeee;
+  background-color: white;
+}
 
 @keyframes App-logo-spin {
   from {

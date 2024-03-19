@@ -9,7 +9,27 @@ export const FilterOptionView = ({ className, label, onChange, onRemove, options
 
     useEffect(() => {
       // label.replace("_", " ").toUpperCase();
-      setShowLabel(label.replace("_", " ").toUpperCase());
+      switch(label){
+        case 'applications':
+          setShowLabel('Application');
+          break;
+        case 'technologies':
+          setShowLabel('Technology');
+          break;
+        case 'item_type':
+          setShowLabel('Type');
+          break;
+        case 'organisation_name':
+          setShowLabel('Organisation');
+          break;
+        case 'country':
+          setShowLabel('Country');
+          break;
+        case 'filter_date':
+          setShowLabel('date');
+          break;
+      }
+      // setShowLabel(label.replace("_", " ").toUpperCase());
     }, [label])
 
     useEffect(()=> {

@@ -40,6 +40,7 @@ import {
 import {FilterOptionView} from './FilterOptionView';
 import { PageInfoView } from "./PageInfoView";
 import { ResultsPerPageView } from "./ResultPerPageView";
+import {ResultsView} from "./ResultsView";
 
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
@@ -106,6 +107,7 @@ export default function App() {
                         urlField="nps_link"
                         thumbnailField="image_url"
                         shouldTrackClickThrough
+                        resultView={ResultsView}
                       />
                     </>
                   }

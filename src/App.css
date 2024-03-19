@@ -35,6 +35,11 @@
 .sui-layout-sidebar{
   text-align: start !important;
 }
+.sui-result__title {
+  text-align: start !important;
+  color: #0d6efd !important;
+  font-weight: 600 !important;
+}
 .sui-result__details{
   text-align: start !important;
 }

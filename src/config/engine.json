@@ -28,11 +28,11 @@
   ],
   "facets": [
     "applications",
-    "domain",
-    "filter_date",
-    "organisation_name",
     "technologies",
-    "country"
+    "item_type",
+    "organisation_name",
+    "country",
+    "filter_date"
   ],
   "titleField": "title",
   "urlField": "url"

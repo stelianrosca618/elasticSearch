@@ -30,13 +30,9 @@
     "applications",
     "domain",
     "filter_date",
-    "item_type",
     "organisation_name",
     "technologies",
-    "text",
-    "title",
-    "country",
-    "url"
+    "country"
   ],
   "titleField": "title",
   "urlField": "url"

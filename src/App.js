@@ -86,13 +86,14 @@ export default function App() {
                     <div>
                       {wasSearched && (
                         <Sorting
+                          className="pb-2"
                           label={"Sort by"}
                           sortOptions={buildSortOptionsFromConfig()}
                         />
                       )}
                       {getFacetFields().map((field, key) => (
-                        <div key={key} className="form-group">
-                          <label>{field}</label>
+                        <div key={key} className="form-group py-2">
+                          {/* <label>{field}</label> */}
                           <Facet key={field} isFilterable={true} field={field} show={100} label={field} view={FilterOptionView}/>
                         </div>
                       ))}

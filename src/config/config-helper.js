@@ -152,11 +152,13 @@ export function buildFacetConfigFromConfig() {
   const config = getConfig();
 
   const facets = (config.facets || []).reduce((acc, n) => {
+    console.log(acc, n);
     acc = acc || {};
     acc[n] = {
       type: "value",
       size: 100
     };
+    
     return acc;
   }, undefined);
 

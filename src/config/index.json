@@ -1,0 +1,68 @@
+{
+    "apiKey": "VzZHUlVvNEJqQnNIQ1dPaGIybko6N1hjM3pldWlTaUdkNnZtdm5hMG16Zw==",
+    "url": "https://582c5f420b5c4377a37008172eb74e25.us-central1.gcp.cloud.es.io:443/generated-items/_search?pretty",
+    "request": {
+        "aggs": {},
+        "size": 10,
+        "track_total_hits": true,
+        "_source": {
+            "includes": [
+                "applications",
+                "applications.keyword",
+                "country",
+                "country.keyword",
+                "domain",
+                "domain.keyword",
+                "filter_date",
+                "item_type",
+                "item_type.keyword",
+                "organisation_name",
+                "organisation_name.keyword",
+                "technologies",
+                "technologies.keyword",
+                "text",
+                "text.keyword",
+                "title",
+                "title.keyword",
+                "uid",
+                "uid.$uuid",
+                "uid.$uuid.keyword",
+                "url",
+                "url.keyword"
+            ]
+        },
+        "highlight": {
+            "fields": {
+                "applications": {},
+                "applications.keyword": {},
+                "country": {},
+                "country.keyword": {},
+                "domain": {},
+                "domain.keyword": {},
+                "filter_date": {},
+                "item_type": {},
+                "item_type.keyword": {},
+                "organisation_name": {},
+                "organisation_name.keyword": {},
+                "technologies": {},
+                "technologies.keyword": {},
+                "text": {},
+                "text.keyword": {},
+                "title": {},
+                "title.keyword": {},
+                "uid": {},
+                "uid.$uuid": {},
+                "uid.$uuid.keyword": {},
+                "url": {},
+                "url.keyword": {}
+            }
+        },
+        "from": 0,
+        "sort": [
+            {
+                "_score": "desc"
+            }
+        ]
+        
+    }
+}

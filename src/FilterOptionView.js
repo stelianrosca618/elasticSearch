@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Select from 'react-select'
 
 export const FilterOptionView = ({ className, label, onChange, onRemove, options, values }) =>  {
-    console.log('options', options, values, label);
     const [showOptions, setShowOptions] = useState([]);
     const [selectedVal, setSelectedVal] = useState(null);
     const [showLabel, setShowLabel] = useState('');

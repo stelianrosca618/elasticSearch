@@ -1,5 +1,5 @@
 {
-  "engineName": "items-engine",
+  "engineName": "search-gen-items",
   "endpointBase": "https://130ed5b74b5949a482abc552f515fdfd.ent-search.us-central1.gcp.cloud.es.io",
   "searchKey": "search-cu83qvk1txaefq3t7q1isfa2",
   "resultFields": [
@@ -35,5 +35,6 @@
     "filter_date"
   ],
   "titleField": "title",
-  "urlField": "url"
+  "urlField": "url",
+  "track_total_hits": true
 }

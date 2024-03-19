@@ -53,20 +53,19 @@ const connector = new AppSearchAPIConnector({
 const config = {
   searchQuery: {
     facets: buildFacetConfigFromConfig(),
-    ...buildSearchOptionsFromConfig()
+    ...buildSearchOptionsFromConfig(),
   },
   autocompleteQuery: buildAutocompleteQueryConfig(),
   apiConnector: connector,
-  alwaysSearchOnInitialLoad: true
+  alwaysSearchOnInitialLoad: true,
 };
-console.log(buildSearchOptionsFromConfig(), buildFacetConfigFromConfig(), buildAutocompleteQueryConfig());
+// console.log(buildSearchOptionsFromConfig(), buildFacetConfigFromConfig(), buildAutocompleteQueryConfig());
 export default function App() {
   
   return (
-    <SearchProvider config={config}>
-      <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched})}>
+    <SearchProvider  config={config}>
+      <WithSearch  mapContextToProps={({ wasSearched }) => ({ wasSearched})}>
         {({ wasSearched }) => {
-          // console.log(wasSearched, Results);
           return (
             <div className="App">
               <ErrorBoundary>

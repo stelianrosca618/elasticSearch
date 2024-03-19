@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
+
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import Select from 'react-select'
 import {
@@ -47,6 +48,7 @@ const connector = new AppSearchAPIConnector({
   hostIdentifier,
   endpointBase
 });
+
 const config = {
   searchQuery: {
     facets: buildFacetConfigFromConfig(),
@@ -70,15 +72,13 @@ export default function App() {
                 <Layout
                   header={
                     <>
-                    <div className="real-sui-layout-header">
-                      <SearchBox className="sui-layout-body__inner" autocompleteSuggestions={true} />
-                    </div>
-                    <div className="sui-layout-body__inner d-flex justify-content-between align-items-center p-4">
-                      {wasSearched && <PagingInfo view={PageInfoView} />}
-                      {wasSearched && <ResultsPerPage label="Items per Page"/>}
-                    </div>
-                    
-                      
+                      <div className="real-sui-layout-header">
+                        <SearchBox className="sui-layout-body__inner" autocompleteSuggestions={true} />
+                      </div>
+                      <div className="sui-layout-body__inner d-flex justify-content-between align-items-center p-4">
+                        {wasSearched && <PagingInfo view={PageInfoView} />}
+                        {wasSearched && <ResultsPerPage label="Items per Page"/>}
+                      </div>
                     </>
                   }
                   
@@ -107,7 +107,6 @@ export default function App() {
                         shouldTrackClickThrough
                       />
                     </>
-                    
                   }
                   bodyHeader={
                     <>

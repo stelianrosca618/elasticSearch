@@ -1,33 +1,43 @@
 {
-  "engineName": "national-parks-demo",
+  "engineName": "items-engine",
   "endpointBase": "https://130ed5b74b5949a482abc552f515fdfd.ent-search.us-central1.gcp.cloud.es.io",
   "searchKey": "search-cu83qvk1txaefq3t7q1isfa2",
   "resultFields": [
-    "visitors",
-    "square_km",
-    "world_heritage_site",
-    "date_established",
-    "description",
-    "location",
-    "acres",
+    "technologies",
+    "country",
+    "item_type",
+    "domain",
+    "filter_date",
+    "text",
+    "organisation_name",
     "title",
-    "nps_link",
-    "states",
+    "url",
+    "applications",
     "id"
   ],
   "sortFields": [
-    "acres",
-    "description",
-    "nps_link",
-    "states",
-    "visitors",
-    "world_heritage_site"
+    "applications",
+    "domain",
+    "country",
+    "item_type",
+    "organisation_name",
+    "technologies",
+    "text",
+    "title",
+    "filter_date"
   ],
   "facets": [
-    "acres",
-    "square_km",
-    "visitors",
-    "states"
+    "applications",
+    "domain",
+    "filter_date",
+    "item_type",
+    "organisation_name",
+    "technologies",
+    "text",
+    "title",
+    "country",
+    "url"
   ],
-  "titleField": "title"
+  "titleField": "title",
+  "urlField": "url"
 }

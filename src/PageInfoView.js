@@ -15,7 +15,7 @@ export const PageInfoView = (props) => {
       
     }else{
       let payload = indexJson.request;
-      if(props.searchTerm !== ""){
+      if(props.searchTerm){
         payload = {...indexJson.request, query: {query_string: {
           query: props.searchTerm 
          }}}

@@ -37,11 +37,14 @@ import {
   getFacetFields
 } from "./config/config-helper";
 
+import configureStore from './store';
+import { mainData } from "./store/store";
 import {FilterOptionView} from './FilterOptionView';
 import { PageInfoView } from "./PageInfoView";
 import { ResultsPerPageView } from "./ResultPerPageView";
 import {ResultsView} from "./ResultsView";
-
+import { Provider } from "react-redux";
+window.filters = {};
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
   searchKey,
@@ -59,11 +62,15 @@ const config = {
   apiConnector: connector,
   alwaysSearchOnInitialLoad: true,
 };
+const InitialData = {
+  mainData: mainData
+}
 // console.log(buildSearchOptionsFromConfig(), buildFacetConfigFromConfig(), buildAutocompleteQueryConfig());
 export default function App() {
   
   return (
-    <SearchProvider  config={config}>
+    <Provider store={configureStore(InitialData)} >
+<SearchProvider config={config}>
       <WithSearch  mapContextToProps={({ wasSearched }) => ({ wasSearched})}>
         {({ wasSearched }) => {
           return (
@@ -124,5 +131,7 @@ export default function App() {
         }}
       </WithSearch>
     </SearchProvider>
+    </Provider>
+    
   );
 }

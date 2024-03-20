@@ -8,13 +8,21 @@ export const PageInfoView = (props) => {
   const storeData = useSelector((store) => store);
   const filters = useSelector((store) => store.mainData.filters );
   const isfilterUpdate = useSelector((store) => store.mainData.isfilterUpdate);
+  const [filterData, setFilterData] = useState({});
+  const [filterIds, setFilterIds] = useState([])
+
   console.log('pageInfor Pages', props, filters, storeData);
   const [totalItems, setTotalItems] = useState(0);
   useEffect(() => {
+    setFilterData(filters)
+    setFilterIds(Object.keys(filters));
     loadTotalVal();
   }, [props])
   useEffect(() => {
+    setFilterData(filters)
+    setFilterIds(Object.keys(filters));
     loadTotalVal();
+   
   }, [filters, isfilterUpdate])
   const loadTotalVal = async () => {
     if(props.totalResults < 1000){
@@ -56,10 +64,21 @@ export const PageInfoView = (props) => {
   }
   return (
     <>
+    <div className="text-start">
       <div>
         <span className="fw-bold">Total Items:</span>
         <span className="px-2">{totalItems} </span>
       </div>
+      <div>
+        <span className="fw-bold">Filters:</span>
+       {filterIds.map(idItem => (
+        filterData[idItem] &&
+          <span className="px-1">[ {filterData[idItem]} ] </span>
+        ))}
+        
+      </div>
+    </div>
+      
     </>
   )
 }

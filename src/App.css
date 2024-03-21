@@ -42,6 +42,19 @@
 }
 .sui-result__details{
   text-align: start !important;
+  
+}
+.viewMode-btn{
+  cursor: pointer;
+  color: #0d6efd;
+  text-decoration: underline;
+}
+.detail-shortView{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
 }
 .real-sui-layout-header{
   padding: 32px 24px;

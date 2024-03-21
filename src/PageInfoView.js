@@ -43,7 +43,9 @@ export const PageInfoView = (props) => {
         const filterKeys = Object.keys(filters);
         filterKeys.map(keyItem => {
           if(filters[keyItem]){
-            filterQuery.push({term:{[`${keyItem}.keyword`]:filters[keyItem]}}) 
+            filters[keyItem].map(fItem => {
+              filterQuery.push({term:{[`${keyItem}.keyword`]:fItem}}) 
+            })
           }
         });
         if(filterQuery.length > 0){
@@ -73,7 +75,7 @@ export const PageInfoView = (props) => {
         <span className="fw-bold">Filters:</span>
        {filterIds.map(idItem => (
         filterData[idItem] &&
-          <span className="px-1">[ {filterData[idItem]} ] </span>
+          <span className="px-1">[ {filterData[idItem].toString()} ] </span>
         ))}
         
       </div>

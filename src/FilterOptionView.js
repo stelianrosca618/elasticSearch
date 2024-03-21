@@ -64,19 +64,30 @@ export const FilterOptionView = ({ className, label, onChange, onRemove, options
       
     }
     const onSelectChanged = (e) => {
-        console.log('checingFilter', filters);
+        console.log('checingFilter', filters, e);
         setSelectedVal(e);
-        if(e){
+        if(e.length > 0){
+          let valuesArr = [];
+          e.map(eItem => {
+            valuesArr.push(eItem.value);
+          })
           let tempFilters = {};
           if(filters){
-            tempFilters = Object.assign(filters, {[label]: e.value});
+            e.map(eItem => {
+              tempFilters = Object.assign(filters, {[label]: valuesArr});
+            })
+            
           }else{
-            tempFilters = {[label]: e.value}
+            e.map(eItem => {
+              tempFilters = Object.assign(tempFilters, {[label]: valuesArr});
+            })
+            
           }
             dispatch(filtersChange_Store(tempFilters))
             dispatch(filterUpdate_store(!isfilterUpdate))
             filtersChange_Store()
-            onChange(e.value)
+            
+            onChange(valuesArr)
             
         }else{
           let tempFilters = {};
@@ -87,14 +98,18 @@ export const FilterOptionView = ({ className, label, onChange, onRemove, options
           }
             dispatch(filtersChange_Store(tempFilters))
             dispatch(filterUpdate_store(!isfilterUpdate))
-            onRemove(options[0].value)
+            let removeVals = [];
+            options.map(oItem => {
+              removeVals.push(oItem.value);
+            })
+            onRemove(removeVals)
         }
         
     }
     
     return (
         <>
-          <Select placeholder={showLabel} isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
+          <Select isMulti placeholder={showLabel} isClearable={true} value={selectedVal} options={showOptions} onChange={onSelectChanged} />
         </>
       )
     }

@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react"
 
 export const ResultsView = (props) => {
-    console.log(props);
+    // console.log(props);
     const [isShort, setIsShort] = useState(true);
     const [textData, setTextData] = useState(null);
     useEffect(() => {
        let textStr = props.result.text.raw;
        const textSpin = props.result.text.snippet;
-       var startId =props.result.text.snippet.indexOf('<em>'); 
-       var endId = props.result.text.snippet.indexOf('</em>'); 
-       const resultStr = textSpin.substr(startId+4, (endId - startId-4));
-       textStr = textStr.replace(resultStr, `<em>${resultStr}</em>`)
+       var highWords = textSpin.match(/<em>(.+?)<\/em>/gi);
+          console.log(highWords);
+          highWords.map(wItem => {
+            const keyW = wItem.replace('<em>', '').replace('</em>', '');
+            textStr = textStr.replace(keyW, wItem);
+          })
+    //    var startId =props.result.text.snippet.indexOf('<em>'); 
+    //    var endId = props.result.text.snippet.indexOf('</em>'); 
+    //    const resultStr = textSpin.substr(startId+4, (endId - startId-4));
+    //    textStr = textStr.replace(resultStr, `<em>${resultStr}</em>`)
        setTextData(textStr);
     },  [props])
     return (

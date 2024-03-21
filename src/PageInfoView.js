@@ -73,9 +73,9 @@ export const PageInfoView = (props) => {
       </div>
       <div>
         <span className="fw-bold">Filters:</span>
-       {filterIds.map(idItem => (
+       {filterIds.map((idItem, key) => (
         filterData[idItem] &&
-          <span className="px-1">[ {filterData[idItem].toString()} ] </span>
+          <span className="px-1">[ {filterData[idItem].join(' OR ').toString()} ] {key < (filterIds.length - 1) && 'AND' }</span>
         ))}
         
       </div>

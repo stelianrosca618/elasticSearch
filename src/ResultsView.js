@@ -9,10 +9,13 @@ export const ResultsView = (props) => {
        const textSpin = props.result.text.snippet;
        var highWords = textSpin.match(/<em>(.+?)<\/em>/gi);
           console.log(highWords);
-          highWords.map(wItem => {
-            const keyW = wItem.replace('<em>', '').replace('</em>', '');
-            textStr = textStr.replace(keyW, wItem);
-          })
+          if(highWords){
+            highWords.map(wItem => {
+                const keyW = wItem.replace('<em>', '').replace('</em>', '');
+                textStr = textStr.replace(keyW, wItem);
+              })
+          }
+          
     //    var startId =props.result.text.snippet.indexOf('<em>'); 
     //    var endId = props.result.text.snippet.indexOf('</em>'); 
     //    const resultStr = textSpin.substr(startId+4, (endId - startId-4));
